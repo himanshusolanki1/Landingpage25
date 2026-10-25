@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +6,257 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>Trader Success</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#171717}
-body{min-height:100svh;display:grid;place-items:center;padding:14px;overflow:hidden}
-main{width:min(100%,430px);max-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:clamp(9px,1.8vh,16px)}
-.logo{width:clamp(100px,24vh,170px);height:clamp(100px,24vh,170px);border:3px solid #e32636;border-radius:50%;display:grid;place-items:center;padding:10px;overflow:hidden;flex-shrink:0;background:#fff}
-.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
-.logo-fallback{font-weight:900;font-size:clamp(21px,5.5vw,32px);line-height:1.05;letter-spacing:-1px}
-.logo-fallback span{color:#e32636}
-h1{font-size:clamp(25px,6.5vw,34px);font-weight:800;letter-spacing:-.8px}
-h1 span{color:#e32636}
-.tagline{font-size:clamp(12px,3.3vw,14px);line-height:1.4;color:#666;max-width:330px}
-.offers{width:100%;display:flex;flex-direction:column;gap:8px;text-align:left}
-.offer{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #eee;border-radius:10px;font-size:clamp(12px,3.4vw,14px);line-height:1.3}
-.check{width:22px;height:22px;flex:0 0 22px;display:grid;place-items:center;border-radius:50%;background:#fff0f1;color:#e32636;font-weight:800}
-.join{width:100%;min-height:48px;display:flex;align-items:center;justify-content:center;gap:9px;padding:12px;background:#e32636;color:white;text-decoration:none;font-weight:700;font-size:15px;border-radius:11px}
-.join svg{width:20px;height:20px}
-.note{font-size:10px;line-height:1.35;color:#888;max-width:350px}
-@media(max-height:650px){main{gap:7px}.logo{width:clamp(78px,17vh,115px);height:clamp(78px,17vh,115px)}.offer{padding:8px 10px}.join{min-height:43px}.note{font-size:9px}}
-@media(max-width:330px){body{padding:9px}.offers{gap:6px}.offer{padding:7px 8px}}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #171717;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+
+main {
+  width: min(100%, 430px);
+  min-height: calc(100svh - 28px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(12px, 2vh, 18px);
+}
+
+/* ROUND LOGO */
+.logo {
+  width: clamp(110px, 24vh, 165px);
+  height: clamp(110px, 24vh, 165px);
+  border: 3px solid #e32636;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+}
+
+.logo-fallback {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.logo-fallback span {
+  color: #e32636;
+}
+
+/* HEADING */
+h1 {
+  font-size: clamp(27px, 6.5vw, 35px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+h1 span {
+  color: #e32636;
+}
+
+.tagline {
+  font-size: clamp(13px, 3.6vw, 15px);
+  line-height: 1.5;
+  color: #666666;
+  max-width: 350px;
+}
+
+/* BENEFITS */
+.offers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  text-align: left;
+}
+
+.offer {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  border: 1px solid #eeeeee;
+  border-radius: 13px;
+  font-size: clamp(13px, 3.5vw, 15px);
+  line-height: 1.35;
+  background: #ffffff;
+}
+
+.check {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0f1;
+  color: #e32636;
+  font-weight: 900;
+  font-size: 17px;
+}
+
+/* TELEGRAM BUTTON */
+.join {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  background: #e32636;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.join:hover {
+  background: #c91d2d;
+}
+
+.join svg {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.note {
+  font-size: 10px;
+  color: #888888;
+  line-height: 1.4;
+}
+
+/* SMALL MOBILE SCREENS */
+@media (max-height: 700px) {
+  main {
+    gap: 9px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .offer {
+    padding: 9px 10px;
+  }
+
+  .join {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 330px) {
+  body {
+    padding: 9px;
+  }
+
+  main {
+    gap: 10px;
+  }
+
+  .offer {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}
 </style>
 </head>
+
 <body>
 <main>
-  
-<div class="logo">
-  <img src="logo.png" alt="Trader Ansh Logo">
-</div>
-  
+
+  <!-- LOGO: logo.png must be in the same folder as index.html -->
+  <div class="logo">
+    <img
+      src="./logo.png"
+      alt="Trader Ansh Logo"
+      onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';"
+    >
+
+    <div id="logoFallback" class="logo-fallback" style="display:none;">
+      TRADER<br><span>ANSH</span>
+    </div>
+  </div>
+
+  <!-- TITLE -->
   <h1>Trader <span>Success</span></h1>
-  <p class="tagline">Trading knowledge. Market ideas. One community.</p>
+
+  <p class="tagline">
+    Trading knowledge. Market ideas. One community.
+  </p>
+
+  <!-- COMMUNITY BENEFITS -->
   <section class="offers" aria-label="Community benefits">
-    <div class="offer"><span class="check">✓</span><strong>25+ Signals Daily</strong></div>
-    <div class="offer"><span class="check">✓</span><strong>Free Copy Trading Knowledge</strong></div>
-    <div class="offer"><span class="check">✓</span><strong>Guidance to Review Past Losses</strong></div>
+
+    <div class="offer">
+      <span class="check">✓</span>
+      <strong>25+ Signals Daily</strong>
+    </div>
+
+    <div class="offer">
+      <span class="check">✓</span>
+      <strong>Free Copy Trading Knowledge</strong>
+    </div>
+
+    <div class="offer">
+      <span class="check">✓</span>
+      <strong>Guidance to Review Past Losses</strong>
+    </div>
+
   </section>
-  <a class="join" href="https://t.me/+yMKQH8qfPzw2YTVl" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 2 2.8 9.4c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 6c.2.7.1 1 .8 1 .5 0 .8-.2 1.1-.5l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.9L23 3.3c.3-1.4-.5-1.9-1-1.3ZM8.3 12.2l10-6.3c.5-.3.9-.1.5.2l-8.3 7.6-.3 3.4-1.9-4.9Z"/></svg>
+
+  <!-- TELEGRAM -->
+  <a
+    class="join"
+    href="https://t.me/+yMKQH8qfPzw2YTVl"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor"
+         aria-hidden="true">
+      <path d="M22 2 2.8 9.4c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 6c.2.7.1 1 .8 1 .5 0 .8-.2 1.1-.5l2.4-2.3 5 3.7c.9.5 1.5.2 1.7-.9L23 3.3c.3-1.4-.5-1.9-1-1.3ZM8.3 12.2l10-6.3c.5-.3.9-.1.5.2l-8.3 7.6-.3 3.4-1.9-4.9Z"/>
+    </svg>
     Join Telegram
   </a>
-  
+
 </main>
 </body>
 </html>
